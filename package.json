@@ -4,7 +4,8 @@
   "scripts": {
     "client": "cd client && npm start",
     "server": "nodemon server.js",
-    "dev": "npm-run-all --parallel server client"
+    "dev": "npm-run-all --parallel server client",
+    "start": "npm-run-all --parallel server client"
   },
   "dependencies": {
     "apicache": "^1.6.2",
