@@ -11,6 +11,8 @@ Please be sure that you are in a running state before you begin. You should see 
 
 Make the changes in a branch whose name contains your name (for example, `michael-final`). Submit your work as a pull request to the `main` branch.
 
+It is highly encouraged that you create commits after each problem is finished to save your progress. You can always revert your code by running `git checkout .` from the root directory of your project to revert to your last commit if you get into a bad state.
+
 ## Problem 1
 ### Create a component to display the current time
 The component should be in its own file. Import this component into `/client/src/App.js`. It should:
@@ -31,8 +33,16 @@ Add an input box after the current time component. Display the text "is a palidr
 * Call the function you wrote in isPalindrome.js
 * Display the text "is a palidrome" next to the input box whenever the current value of the text box is a palindrome, but when the value is not a palindrome, do not add additional text.
 
+## Problem 4
+### Submit new palindromes to list
+Hook up the input created in Problem 3 to be able to submit to the list of palindromes.
+* Add a button to the right of the input (can be after the "is a palindrome" text. The button should be disabled when not a palindrome
+* extend the API in /server.js to allow for new palidrmoes to be added
+* Use axios to submit the new palindrome to the API
+* refresh the palidrome list after the palindrome is added
 
-
-
-
-
+## Problem 5
+### Add a created date to palindromes
+Start tracking the date that palindromes are added.
+* Display this date alongside the palindrome in the list
+* If there is no date (like, say, for the pre-populated data), display nothing
