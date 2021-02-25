@@ -13,12 +13,15 @@ Make the changes in a branch whose name contains your name (for example, `michae
 
 It is highly encouraged that you create commits after each problem is finished to save your progress. You can always revert your code by running `git checkout .` from the root directory of your project to revert to your last commit if you get into a bad state.
 
+When finished, you app will appear something like:
+![Final State](https://github.com/un-loop/bootcamp-final/raw/main/doc-images/final-state.PNG)
+
 ## Problem 1
 ### Create a component to display the current time
 The component should be in its own file. Import this component into `/client/src/App.js`. It should:
 * use the [momentjs](https://momentjs.com/) package to display the time (you need to install this to the project in `/client`
 * display the current time in the format: Feb 22, 2021 3:50 PM
-* Update the clock display every second
+* Update the clock display every second (if you don't know this, don't get stuck here and please move on).
 * Be placed underneath "This is the bootcamp final."
 * you may use the built-in <input> react element, or use a component library such as Material-ui, as it suits you best.
 
@@ -36,9 +39,10 @@ Add an input box after the current time component. Display the text "is a palidr
 ## Problem 4
 ### Submit new palindromes to list
 Hook up the input created in Problem 3 to be able to submit to the list of palindromes.
-* Add a button to the right of the input (can be after the "is a palindrome" text. The button should be disabled when not a palindrome
-* extend the API in /server.js to allow for new palidrmoes to be added
-* Use axios to submit the new palindrome to the API
+* Add a button to the right of the input (can be after the "is a palindrome" text). The button should be disabled when the current text is not a palindrome
+* extend the API in `/server.js` to allow for new palidromes to be added
+* Use axios on the front end to submit the new palindrome to the API
+* clear the text box after submitting the palindrome
 * refresh the palidrome list after the palindrome is added
 
 ## Problem 5
