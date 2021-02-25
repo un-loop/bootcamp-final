@@ -21,7 +21,7 @@ When finished, you app will appear something like:
 The component should be in its own file. Import this component into `/client/src/App.js`. It should:
 * use the [momentjs](https://momentjs.com/) package to display the time (you need to install this to the project in `/client`
 * display the current time in the format: Feb 22, 2021 3:50 PM
-* Update the clock display every second
+* Update the clock display every second (if you don't know this, don't get stuck here and please move on).
 * Be placed underneath "This is the bootcamp final."
 * you may use the built-in <input> react element, or use a component library such as Material-ui, as it suits you best.
 
