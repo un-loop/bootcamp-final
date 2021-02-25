@@ -54,7 +54,7 @@ Start tracking the date that palindromes are added.
 ## Problem 6
 ### Add error checking
 In the API in `/server.js`, add code to check whether the palindrome already exists in the list.
-* If the palindrome exists, return a BAD_REQUEST respose, with body text saying `The palindrome _"what_you_entered"_ already exists.`
+* If the palindrome exists, return a BAD_REQUEST respose, with body text saying `The palindrome "what_you_entered" already exists.`
 * Check for this response in the front end and display a message with window.alert() showing the error returned from the server.
 * If any other error occurs when hitting the API, show that error message. For instance, if the server is not running, an alert saying "Network Error" should be displayed.
 
