@@ -39,9 +39,10 @@ Add an input box after the current time component. Display the text "is a palidr
 ## Problem 4
 ### Submit new palindromes to list
 Hook up the input created in Problem 3 to be able to submit to the list of palindromes.
-* Add a button to the right of the input (can be after the "is a palindrome" text. The button should be disabled when not a palindrome
-* extend the API in /server.js to allow for new palidrmoes to be added
-* Use axios to submit the new palindrome to the API
+* Add a button to the right of the input (can be after the "is a palindrome" text). The button should be disabled when the current text is not a palindrome
+* extend the API in `/server.js` to allow for new palidromes to be added
+* Use axios on the front end to submit the new palindrome to the API
+* clear the text box after submitting the palindrome
 * refresh the palidrome list after the palindrome is added
 
 ## Problem 5
