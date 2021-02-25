@@ -13,6 +13,9 @@ Make the changes in a branch whose name contains your name (for example, `michae
 
 It is highly encouraged that you create commits after each problem is finished to save your progress. You can always revert your code by running `git checkout .` from the root directory of your project to revert to your last commit if you get into a bad state.
 
+When finished, you app will appear something like:
+![Final State](https://github.com/un-loop/bootcamp-final/raw/main/doc-images/final-state.PNG)
+
 ## Problem 1
 ### Create a component to display the current time
 The component should be in its own file. Import this component into `/client/src/App.js`. It should:
