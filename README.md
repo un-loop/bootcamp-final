@@ -9,7 +9,7 @@ Once you have the project downloaded, you need to run `npm i` in both the root a
 Please be sure that you are in a running state before you begin. You should see the below when navigating to `http://localhost:3000`:
 ![Initial State](https://github.com/un-loop/bootcamp-final/raw/main/doc-images/initial-state.PNG).
 
-Make the changes in a branch whose name contains your name (for example, michael-final`). Submit your work as a pull request to the `main` branch.
+Make the changes in a branch whose name contains your name (for example, `michael-final`). Submit your work as a pull request to the `main` branch.
 
 ## Problem 1
 ### Create a component to display the current time
