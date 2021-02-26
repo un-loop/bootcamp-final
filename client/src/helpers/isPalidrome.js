@@ -4,4 +4,4 @@ const isPalidrome = (str) => {
     return newStr.toLowerCase() === compare.toLowerCase();
 }
 
-export default isPalidrome;
+export  { isPalidrome };
