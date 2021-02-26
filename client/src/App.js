@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import Time from './components/CurrentTime';
+import PalidromeInput from './components/PalidromeInput';
 
 axios.defaults.baseURL = 'http://localhost:5000';
 axios.defaults.headers.post['Content-Type'] = 'applicatin/json';
@@ -32,11 +33,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          
           This is the bootcamp final.
-          <br />
+        </p>
+        <p>
           <Time />
         </p>
+       
+        <PalidromeInput />
+        
+        
         {
           <ul>
             {
