@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import Time from './components/CurrentTime';
-import PalidromeInput from './components/PalidromeInput';
+import PalindromeInput from './components/PalindromeInput';
 
 axios.defaults.baseURL = 'http://localhost:5000';
-axios.defaults.headers.post['Content-Type'] = 'applicatin/json';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 function App() {  
   const [palindromeList, setPalindromList] = useState([]);
@@ -29,6 +29,7 @@ function App() {
     }, [loadList]
   );
 
+
   return (
     <div className="App">
       <header className="App-header">
@@ -38,10 +39,7 @@ function App() {
         <p>
           <Time />
         </p>
-       
-        <PalidromeInput />
-        
-        
+          <PalindromeInput /> 
         {
           <ul>
             {

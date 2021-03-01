@@ -24,4 +24,10 @@ app.get('/api/palindromes', (req, res) => {
   res.send(palindromes);
 });
 
+app.post('/api/palindromes', (req, res) => {
+  palindromes.push(JSON.stringify(req.body));
+  res.send(palindromes);
+})
+
+
 app.listen(PORT);
