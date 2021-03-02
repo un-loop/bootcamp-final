@@ -1,15 +1,22 @@
+import React, { useState } from "react"; 
 const moment = require ("moment");
 
 
 const CurrentTime = () => {
-    let curr_time = moment().format('MMMM Do YYYY, h:mm:ss a');
-    return curr_time;
+    let time = moment().format('MMMM Do YYYY, h:mm:ss a');
+    const [ctime, setCtime] = useState(time);
+    const UpdateTime = () => {
+        time = moment().format('MMMM Do YYYY, h:mm:ss a')
+        setCtime(time);
+    };
+    setInterval(UpdateTime, 1000);
+    return(
+        <>
+            <p>{ctime}</p>
+        </>
+    );
 }; 
 
 
-setInterval(() => {
-    CurrentTime();
-}, 1000);
-CurrentTime()
 
 export default CurrentTime;
