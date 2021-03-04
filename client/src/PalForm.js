@@ -39,17 +39,27 @@ const PalForm = ({ updateList }) => {
                 ...pal
             }
         }
-        await axios(options)
-        updateList()
-        setPal(
-            {
-                val: '',
-                isPal: true
-            });
+        try {
+            const response = await axios(options);
+            console.log(response);
+            updateList();
+        } catch (error) {
+            if(error.response && error.response.data.includes('The palindrome')){
+                alert(error.response.data)
+            } else {
+                alert(error)
+            }
+        } finally {
+            setPal(
+                {
+                    val: '',
+                    isPal: true
+                });
+        }
     }
 
     return (
-        <form>
+        <form onSubmit={(e) => {e.preventDefault(); subPal(e)}}>
             <input type='text' value={pal.val} onChange={onInput}/>
             <span>{display(pal.isPal)}</span>
             {pal.isPal && <button type='button' onClick={subPal}>Add</button>}

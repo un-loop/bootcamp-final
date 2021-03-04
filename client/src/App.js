@@ -43,7 +43,7 @@ function App() {
             {
               palindromeList.map(
                 (palindrome, index) => <li key={index}>
-                  {palindrome}
+                  {(typeof palindrome === 'string') ? palindrome : palindrome.val + ' ' + palindrome.time}
                 </li>
               )
             }
