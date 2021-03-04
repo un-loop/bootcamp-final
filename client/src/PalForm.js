@@ -41,7 +41,6 @@ const PalForm = ({ updateList }) => {
         }
         try {
             const response = await axios(options);
-            console.log(response);
             updateList();
         } catch (error) {
             if(error.response && error.response.data.includes('The palindrome')){
