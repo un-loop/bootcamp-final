@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 const isPalindrome = (str) => {
     const stack = "";
@@ -17,5 +17,6 @@ const isPalindrome = (str) => {
     }
     return true;
 }
+isPalindrome();
 
     export default isPalindrome;
