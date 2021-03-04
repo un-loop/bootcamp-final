@@ -23,7 +23,7 @@ The component should be in its own file. Import this component into `/client/src
 * display the current time in the format: Feb 22, 2021 3:50 PM
 * Update the clock display every second (if you don't know this, don't get stuck here and please move on).
 * Be placed underneath "This is the bootcamp final."
-* you may use the built-in <input> react element, or use a component library such as Material-ui, as it suits you best.
+* you may use built-in <input> react element(s), or use a component library such as Material-ui, as it suits you best.
 
 ## Problem 2
 ### Write a function to return whether or not a string is a palindrome
