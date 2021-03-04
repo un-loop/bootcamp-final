@@ -4,7 +4,7 @@ This is a bootstrap project that we will use to conduct your final examination. 
 
 ```git clone https://github.com/un-loop/bootcamp-final.git```
 
-Once you have the project downloaded, you need to run `npm i` in both the root and client/ directories of the project. Once you have finished, `npm start` from the root will launch the project. Two servers will be started. One port 5000, there will be a backend API, served by `/server.js`. On port 3000, will be your familiar frontend create-react-app project, which will serve the front end code.
+Once you have the project downloaded, you need to run `npm i` in both the root and client/ directories of the project. Once you have finished, `npm start` from the root will launch the project. Two servers will be started. On port 5000, there will be a backend API, served by `/server.js`. On port 3000, will be your familiar frontend create-react-app project, which will serve the front end code.
 
 Please be sure that you are in a running state before you begin. You should see the below when navigating to `http://localhost:3000`:
 ![Initial State](https://github.com/un-loop/bootcamp-final/raw/main/doc-images/initial-state.PNG).
