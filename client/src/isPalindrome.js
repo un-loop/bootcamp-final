@@ -17,6 +17,5 @@ const isPalindrome = (str) => {
     }
     return true;
 }
-isPalindrome();
 
     export default isPalindrome;
