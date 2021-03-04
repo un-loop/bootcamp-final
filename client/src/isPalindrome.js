@@ -1,15 +1,39 @@
-import React from 'react';
+import { Box, TextField } from '@material-ui/core';
+import {useState,React} from 'react';
 
-let isPalindrome = (str) => {
-    const arrayValues = str.split('');
-    const reverseArrayValues = arrayValues.reverse();
-    const reverseString = reverseArrayValues.join('');
-    if(str == reverseString) {
-        return true;
+
+
+
+
+
+let Palindrome = (props) => {
+    const [string, setString] = useState( "" );
+
+    let isPalindrome = (str) => {
+         str = string
+        const arrayValues = str.split('');
+        const reverseArrayValues = arrayValues.reverse();
+        const reverseString = reverseArrayValues.join('');
+        if(str === reverseString) {
+            return "I am a palindrome"
+        }
+        else {
+            return "I am not a palindrome"
+        }
     }
-    else {
-        return false;
-    }
+
+    return (
+        <Box>
+        <TextField id="input" variant="outlined"
+        value={string}
+        onChange={(e) => setString( e.currentTarget.value )}
+        ></TextField>
+
+       <Box> {isPalindrome(string)}</Box>
+
+
+
+        </Box>
+    )
 }
-;
-console.log(isPalindrome("racecar"))
+export default Palindrome
