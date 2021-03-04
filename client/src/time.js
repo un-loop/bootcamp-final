@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { Box } from '@material-ui/core';
 
-const Time = () => {
+let Time = () => {
 
     return (
 
