@@ -40,7 +40,7 @@ const PalForm = ({ updateList }) => {
             }
         }
         try {
-            const response = await axios(options);
+            await axios(options);
             updateList();
         } catch (error) {
             if(error.response && error.response.data.includes('The palindrome')){
