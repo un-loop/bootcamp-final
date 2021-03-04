@@ -9,6 +9,7 @@ axios.defaults.headers.post['Content-Type'] = 'applicatin/json';
 function App() {  
   const [palindromeList, setPalindromList] = useState([]);
 
+
   const loadList = useCallback(async (abortToken) => {
     const result = await axios.get('/api/palindromes');
 
@@ -36,7 +37,7 @@ function App() {
           This is the bootcamp final.
         </p>
         <Time />
-        <PalForm />
+        <PalForm updateList={() => loadList()}/>
         {
           <ul>
             {

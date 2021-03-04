@@ -24,4 +24,11 @@ app.get('/api/palindromes', (req, res) => {
   res.send(palindromes);
 });
 
+app.post('/api/palindromes', (req, res) => {
+  res.set('Cache-control', 'no-cache');
+  palindromes.push(req.body.val);
+  res.send(palindromes);
+})
+
+
 app.listen(PORT);
