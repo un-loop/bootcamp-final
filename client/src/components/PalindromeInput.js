@@ -1,32 +1,26 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { isPalindrome } from '../helpers/isPalindrome';
+import { isPalindrome } from './isPalindrome';
 
-function PalindromeInput() {
-    const [data, setData] = useState({
-        letters: '',
-    });
-
-    const [form, setForm] = useState({
-        letters: '',
-    });
-
-    const [submit, submitted] = useState(false);
+function PalindromeInput(props) {
+    const [data, setData] = useState('');
+    const [palindrome, setPalindrome] = useState(true);
 
     const onChange = e => {
-        setData({
-            ...data,
-            [e.target.name]: e.target.value
-        });
-        isPalindrome(data);
+        setData(e.target.value);
+
+        console.log('data', data)
+        let result = isPalindrome(data);
+        console.log('result', result);
+        console.log('data ', data);
     }
 
     const onSubmit = e => {
         e.preventDefault();
-        setForm({
-            letters: data.letters,
-        });
-        submitted(true);
+
+        axios.post('/api/palindromes', { data })
+            // .then(() => loadList())
+
         // let checkData = data;
         // if(!this.checkIfExists(checkData)) {
         //   axios.post('/api/palindromes', { data })
@@ -50,19 +44,25 @@ function PalindromeInput() {
     //   }
 
         return (
-            <form onSubmit={onSubmit}>
-                <input 
-                    type='text'
-                    name='letters'
-                    value={data.letters}
-                    onChange={onChange}
-                />{' '} 
-                
-                        is a palidrome 
-                        <input type='submit' value='Add' />
-
-                 
-            </form>    
+            <>
+                <div>Input data: {data} </div>
+                <div>
+                    {palindrome === true ? (
+                        <span><input 
+                        type='text'
+                        value={data}
+                        onChange={onChange}
+                        /> is a palidrome 
+                        <input type='submit' value='Add' onSubmit={onSubmit} /></span>
+                    ) : (
+                        <input 
+                        type='text'
+                        value={data}
+                        onChange={onChange}
+                        />
+                    )}
+                </div> 
+            </>   
         )
 };
 

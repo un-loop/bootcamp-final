@@ -25,7 +25,8 @@ app.get('/api/palindromes', (req, res) => {
 });
 
 app.post('/api/palindromes', (req, res) => {
-  palindromes.push(JSON.stringify(req.body));
+  let data = req.body.data
+  palindromes.push(data);
   res.send(palindromes);
 })
 
