@@ -1,6 +1,6 @@
 function isPalindrome (str) {
     let arr = str.split('')
-    for (let i = 0, h = arr.length - 1; i < (arr.length / 2) - 1; i++, h--) {
+    for (let i = 0, h = arr.length - 1; i < (arr.length / 2); i++, h--) {
         while (arr[i].match(/\W/)){
             i++;
         }
@@ -14,7 +14,9 @@ function isPalindrome (str) {
     return true
 }
 
-// let arrTest = ['sts', 'hello', 'whyyhw', '', 'why the, ere, htyhw?']
-// for (x in arrTest) {
+export default isPalindrome
+
+// let arrTest = ['sts', 'hello', 'whyyhw', '', 'why the, ere, htyhw?', 'hh', 'he']
+// for (let x in arrTest) {
 //     console.log(isPalindrome(arrTest[x]))
 // }
