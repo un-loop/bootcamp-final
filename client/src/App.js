@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
-
+import Time from './time';
 axios.defaults.baseURL = 'http://localhost:5000';
 axios.defaults.headers.post['Content-Type'] = 'applicatin/json';
 
-function App() {  
+function App() {
   const [palindromeList, setPalindromList] = useState([]);
 
   const loadList = useCallback(async (abortToken) => {
@@ -33,6 +33,7 @@ function App() {
         <p>
           This is the bootcamp final.
         </p>
+      <Time />
         {
           <ul>
             {
