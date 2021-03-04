@@ -1,6 +1,7 @@
-import React, {  useState } from 'react'
-import isPalindrome from './isPalindrome'
-import axios from 'axios'
+import React, {  useState } from 'react';
+import moment from 'moment';
+import isPalindrome from './isPalindrome';
+import axios from 'axios';
 
 axios.defaults.baseURL = 'http://localhost:5000';
 axios.defaults.headers.post['Content-Type'] = 'applicatin/json';
@@ -33,7 +34,10 @@ const PalForm = ({ updateList }) => {
         const options = {
             method: 'post',
             url: '/api/palindromes',
-            data: pal
+            data: {
+                time: moment().format('MMMM Do YYYY, h:mm a'),
+                ...pal
+            }
         }
         await axios(options)
         updateList()
@@ -48,7 +52,7 @@ const PalForm = ({ updateList }) => {
         <form>
             <input type='text' value={pal.val} onChange={onInput}/>
             <span>{display(pal.isPal)}</span>
-            {pal.isPal && <button type='button' onClick={subPal}>Submit</button>}
+            {pal.isPal && <button type='button' onClick={subPal}>Add</button>}
         </form>
     )
 }

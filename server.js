@@ -26,7 +26,7 @@ app.get('/api/palindromes', (req, res) => {
 
 app.post('/api/palindromes', (req, res) => {
   res.set('Cache-control', 'no-cache');
-  palindromes.push(req.body.val);
+  palindromes.push(req.body.val + ' ' + req.body.time);
   res.send(palindromes);
 })
 
