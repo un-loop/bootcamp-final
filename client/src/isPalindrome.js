@@ -1,16 +1,12 @@
-function isPalindrome(str) {
+export function isPalindrome(str = " ") {
     var word = str.length;
-    if (word === 1) {
-        return true;
+    if (word === 1){
+        console.log(true) && alert("1 word is a palindrome");
     }
-    
-    if (str[0] === str[word-1]) {
-        return isPalindrome(str.slice(1, word-1) );
-    }
-    return false;
+    else if (str[0] === str[word - 1]) {
+        return isPalindrome(str.slice(1, word - 1)) && alert("is a palindrome");
+    } else{
+        console.log(false) && alert("not a palindrome");
+        }
 }
 
-console.log(isPalindrome('ab'));
-console.log(isPalindrome('madam'));
-console.log(isPalindrome('kayak'));
-console.log(isPalindrome('moms'));
