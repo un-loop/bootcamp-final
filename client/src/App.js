@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
-
+import Time from './time';
+import Palindrome from './isPalindrome'
 axios.defaults.baseURL = 'http://localhost:5000';
 axios.defaults.headers.post['Content-Type'] = 'applicatin/json';
 
-function App() {  
+function App() {
   const [palindromeList, setPalindromList] = useState([]);
+  const [string, setString] = useState( "" );
 
   const loadList = useCallback(async (abortToken) => {
     const result = await axios.get('/api/palindromes');
@@ -27,12 +29,15 @@ function App() {
     }, [loadList]
   );
 
+
   return (
     <div className="App">
       <header className="App-header">
         <p>
           This is the bootcamp final.
         </p>
+      <Time />
+      <Palindrome />
         {
           <ul>
             {
