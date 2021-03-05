@@ -24,4 +24,16 @@ app.get('/api/palindromes', (req, res) => {
   res.send(palindromes);
 });
 
+app.post('/api/palindromes', (req, res) => {
+  res.set('Cache-control', 'no-cache');
+  for (let elem of palindromes) {
+    if ((typeof elem === 'string' && elem === req.body.val) || elem.val === req.body.val) {
+      return res.status(400).send(`The palindrome '${req.body.val}' already exists.`)
+    }
+  }
+  palindromes.push({val :req.body.val, time:req.body.time});
+  res.send(palindromes);
+})
+
+
 app.listen(PORT);
