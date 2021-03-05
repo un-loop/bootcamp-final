@@ -1,4 +1,4 @@
-import { Box, TextField } from '@material-ui/core';
+import { Box, Button, TextField } from '@material-ui/core';
 import {useState,React} from 'react';
 
 
@@ -15,10 +15,10 @@ let Palindrome = (props) => {
         const reverseArrayValues = arrayValues.reverse();
         const reverseString = reverseArrayValues.join('');
         if(str === reverseString) {
-            return "I am a palindrome"
+            return <Button variant="contained" color="primary">Add me</Button>
         }
         else {
-            return "I am not a palindrome"
+            return <Button variant="contained" color="primary" disabled>Add me</Button>
         }
     }
 
