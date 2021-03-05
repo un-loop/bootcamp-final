@@ -26,9 +26,18 @@ app.get('/api/palindromes', (req, res) => {
 
 app.post('/api/palindromes', (req, res) => {
   let data = req.body.data
-  palindromes.push(data);
-  res.send(palindromes);
-})
+  if (palindromes.includes(data)) {
+    return res.status(500)
+      .send({
+        error: 'That palindrome already exists'
+      })
+  } else {
+    palindromes.push(data);
+    res.status(200)
+    .send(palindromes);
+    // .send({result: 'OK'});
+  }
+});
 
 
 app.listen(PORT);

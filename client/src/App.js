@@ -8,8 +8,6 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 function App() {  
   const [palindromeList, setPalindromList] = useState([]);
-  const [data, setData] = useState('');
-  // const [resultPalindrome, setResultPalindrome] = useState(False);
 
   const loadList = useCallback(async (abortToken) => {
     const result = await axios.get('/api/palindromes');
@@ -30,10 +28,6 @@ function App() {
       return () => abortToken.aborted = true;
     }, [loadList]
   );
-
-  useEffect(() => {
-
-  })
 
 
   return (

@@ -1,47 +1,32 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import { isPalindrome } from './isPalindrome';
+import React, { useCallback, useState } from 'react';
+import { isPalindrome } from '../isPalindrome';
+import PalindromList from '../App';
+import loadList from '../App';
 
 function PalindromeInput(props) {
     const [data, setData] = useState('');
-    const [palindrome, setPalindrome] = useState(true);
+    const [palindrome, setPalindrome] = useState(false);
 
-    const onChange = e => {
-        setData(e.target.value);
-
-        console.log('data', data)
-        let result = isPalindrome(data);
-        console.log('result', result);
-        console.log('data ', data);
+    const onChange = (e) => {
+       let letters = e.target.value;
+       setData(letters);
+       let result = isPalindrome(letters);
+       setPalindrome(result);
     }
-
-    const onSubmit = e => {
+   
+    const onSubmit = async (e) => {
+        try {
+            await axios.post('/api/palindromes', { data })
+            .then(res => res.data)
+            .then((list) => PalindromList)
+            .then(() => setData(''))
+        } catch (err) {
+            console.log(err)
+        }
         e.preventDefault();
-
-        axios.post('/api/palindromes', { data })
-            // .then(() => loadList())
-
-        // let checkData = data;
-        // if(!this.checkIfExists(checkData)) {
-        //   axios.post('/api/palindromes', { data })
-        //     .then(() => loadList())
-        //     .then(() => setData(''))
-        // } else {
-        //     setData('');
-        //     () => loadList();
-        // }
+        
     };
-
-    // const checkIfExists = checkData => {
-    //     let length = palindromeList.length;
-    //     for (var i = 0; i < length; i++) {
-    //       if (palindromeList[i].key === checkData.toLowerCase()) {
-    //         alert('Palindrome already exists in database!');
-    //         return true;
-    //       }
-    //     }
-    //     return false;
-    //   }
 
         return (
             <>
@@ -50,10 +35,11 @@ function PalindromeInput(props) {
                     {palindrome === true ? (
                         <span><input 
                         type='text'
+                        name='data'
                         value={data}
                         onChange={onChange}
                         /> is a palidrome 
-                        <input type='submit' value='Add' onSubmit={onSubmit} /></span>
+                        <input type='submit' value='Add' onClick={onSubmit} /></span>
                     ) : (
                         <input 
                         type='text'
