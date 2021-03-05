@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import { isPalindrome } from '../isPalindrome';
-import PalindromList from '../App';
-import loadList from '../App';
+
+
 
 function PalindromeInput(props) {
     const [data, setData] = useState('');
@@ -14,23 +14,14 @@ function PalindromeInput(props) {
        let result = isPalindrome(letters);
        setPalindrome(result);
     }
-   
-    const onSubmit = async (e) => {
-        try {
-            await axios.post('/api/palindromes', { data })
-            .then(res => res.data)
-            .then((list) => PalindromList)
-            .then(() => setData(''))
-        } catch (err) {
-            console.log(err)
-        }
-        e.preventDefault();
-        
-    };
+
+    const onSubmit = () => {
+        props.onSubmit(data);
+        setData('');
+    }
 
         return (
             <>
-                <div>Input data: {data} </div>
                 <div>
                     {palindrome === true ? (
                         <span><input 

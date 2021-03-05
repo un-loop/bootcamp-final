@@ -9,6 +9,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 function App() {  
   const [palindromeList, setPalindromList] = useState([]);
 
+
   const loadList = useCallback(async (abortToken) => {
     const result = await axios.get('/api/palindromes');
 
@@ -29,6 +30,15 @@ function App() {
     }, [loadList]
   );
 
+  const onSubmit = (data) => {
+    try {
+        axios.post('/api/palindromes', { data })
+        .then(res => setPalindromList(res.data))
+    } catch (err) {
+        alert("That palindrome already exists");
+    }
+};
+
 
   return (
     <div className="App">
@@ -39,14 +49,14 @@ function App() {
         
           <Time />
         
-          <PalindromeInput /> 
+          <PalindromeInput onSubmit={onSubmit}/> 
 
         {
           <ul>
             {
               palindromeList.map(
                 (palindrome, index) => <li key={index}>
-                  {palindrome}
+                  {palindrome.item} {palindrome.date}
                 </li>
               )
             }
