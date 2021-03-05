@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import Date from './time';
+import TextInput from './textInput';
 
 axios.defaults.baseURL = 'http://localhost:5000';
 axios.defaults.headers.post['Content-Type'] = 'applicatin/json';
@@ -35,6 +36,7 @@ function App() {
           This is the bootcamp final.
         </p>
         <Date></Date>
+        <TextInput></TextInput>
         {
           <ul>
             {
