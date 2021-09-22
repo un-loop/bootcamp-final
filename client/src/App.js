@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, onSubmit } from "react";
 import axios from "axios";
 import Time from "./currentTime";
-import isPalindrome from "./isPalindrome";
-import React from "react";
+import PalindromeInput from "./palindromeInput";
+import React from 'react';
 
 axios.defaults.baseURL = 'http://localhost:5000';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -67,6 +67,8 @@ function App() {
         </p>
 
           <Time /> 
+
+          <PalindromeInput onSubmit={onSubmit}/>
           
           <SimpleForm/>
         {

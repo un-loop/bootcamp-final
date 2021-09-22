@@ -47,3 +47,5 @@ function PalindromeInput(props) {
         </>
     )
 };
+
+export default PalindromeInput;
