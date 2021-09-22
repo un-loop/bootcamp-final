@@ -1,22 +1,22 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
-import currDate from "./currentTime";
+import Time from "./currentTime";
 import isPalindrome from "./isPalindrome";
 import React from "react";
 
 axios.defaults.baseURL = 'http://localhost:5000';
-axios.defaults.headers.post['Content-Type'] = 'applicatin/json';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 function App() {  
-  const [palindromeList, setPalindromList] = useState([]);
+  const [palindromeList, setPalindromeList] = useState([]);
 
   const loadList = useCallback(async (abortToken) => {
     const result = await axios.get('/api/palindromes');
 
     if (!abortToken || !abortToken.aborted) {
-      setPalindromList(result.data);
+      setPalindromeList(result.data);
     }
-  }, [setPalindromList]);
+  }, [setPalindromeList]);
 
   useEffect(
     () => {
@@ -65,16 +65,16 @@ function App() {
         <p>
           This is the bootcamp final.
         </p>
-        <currDate> 
-          {moment}
-        </currDate>
-        <SimpleForm/>
+
+          <Time /> 
+          
+          <SimpleForm/>
         {
           <ul>
             {
               palindromeList.map(
                 (palindrome, index) => <li key={index}>
-                  {palindrome}
+                  {palindrome.item} {palindrome.date}
                 </li>
               )
             }

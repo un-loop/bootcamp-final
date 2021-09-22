@@ -1,25 +1,20 @@
-import React from 'react';
-import Moment from 'react-moment';
+import React, { useState } from 'react';
 
-const moment = () => {
-  constructor() 
-    this.state = {
-      // currentDateTime: Date().toLocaleString()
-    }
-  const currentDateTime = '1976-04-19T12:59-0500';
+const moment = require ("moment");
 
-    return (
-        <Moment>{currentDateTime}</Moment>
-    );
-}
-export default moment;
-
-// export default class MyComponent extends React.Component {
-//   render() {
-//       return (
-//           const dateToFormat = '1976-04-19T12:59-0500';
-//           <Moment>{dateToFormat}</Moment>
-//       );
-//   }
-// }
-
+const CurrentTime = () => {
+  let time = moment().format('MMMM Do YYYY, h:mm:ss a');
+  const [ctime, setCtime] = useState(time);
+  const UpdateTime = () => {
+    time = moment().format('MMMM Do YYYY, h:mm:ss a')
+    setCtime(time);
+  };
+  setInterval(UpdateTime, 1000);
+  return(
+    <>
+      <p>{ctime}</p>
+    </>
+  );
+};
+  
+export default CurrentTime;
